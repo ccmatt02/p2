@@ -1,0 +1,23 @@
+.banner {
+    background: transparent url('http://i.imgur.com/Bu7EvzO.png') 0 0 no-repeat fixed;
+    text-align: center;
+    background-size: cover;
+    height: 200px;
+    width: 100%;
+    margin-bottom: 3em;
+    display: table;
+}
+
+.banner-head {
+    display: table-cell;
+    vertical-align: middle;
+    margin-bottom: 0;
+    font-size: 2em;
+    color: grey;
+    font-weight: 500;
+    text-shadow: 0 1px 1px black;
+}
+
+#formLeft {
+	margin-left: 20px;
+}
