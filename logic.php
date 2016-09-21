@@ -17,11 +17,8 @@ else {
 	$passLen = 4;
 }
 
-var_dump($_GET);
-
 for($i = 0; $i < $passLen; $i++){
 	$outputString .= $wordBank[$i];
-	echo "loop ".$i;
 	if($i != ($passLen-1)){
 		$outputString .= '-';
 	}

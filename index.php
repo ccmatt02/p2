@@ -29,7 +29,7 @@
 	<fieldset>
 			<div class="pure-g"> 
 				<div class="pure-u-1-5" id="formLeft"> 
-					<input id="wordNumber" type="textbox" placeholder="Number of words">
+					<input name="wordNumber" type="textbox" placeholder="Number of words">
 					<br><br>
 					<button type="submit" class="pure-button pure-button-primary">Generate</button>
 				</div>
@@ -38,19 +38,19 @@
 
 					<br>
 					<label for="reqNum">
-						<input id="reqNum" type="checkbox"> Include a number
+						<input name="reqNum" type="checkbox"> Include a number
 					</label>
 					
 					<br>
 					
 					<label for="reqCap">
-						<input id="reqCap" type="checkbox"> Include a capitalized word
+						<input name="reqCap" type="checkbox"> Include a capitalized word
 					</label>
 					
 					<br>
 					
 					<label for="reqSpec">
-						<input id="reqSpec" type="checkbox"> Include a special character
+						<input name="reqSpec" type="checkbox"> Include a special character
 					</label>
 
 				</div>
@@ -60,7 +60,6 @@
 			</div>
 	</fieldset>
 </form>
-
 
 
 </body>
