@@ -14,7 +14,7 @@ The word bank is constructed from Lewis Caroll's "Alice's Adventures In Wonderla
 ## Details for teaching team
 	None for this project
 
-## Outside code
+## Outside sources
 * PureCSS: <http://purecss.io/>
 * Convertio .txt to .csv converter: <https://convertio.co/txt-csv/>
 * The word bank was derived from Lewis Caroll's "Alice's Adventures In Wonderland"
