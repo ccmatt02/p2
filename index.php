@@ -29,7 +29,7 @@
 	<fieldset>
 			<div class="pure-g"> 
 				<div class="pure-u-1-5" id="formLeft"> 
-					<input name="wordNumber" type="textbox" placeholder="Number of words">
+					<input name="wordNumber" type="textbox" placeholder="Number of words (2-10)">
 					<br><br>
 					<button type="submit" class="pure-button pure-button-primary">Generate</button>
 				</div>

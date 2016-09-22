@@ -1,22 +1,18 @@
 <?php
 
-$wordBank = [];
+// Load .csv file into wordbank
+$wordBank = str_getcsv(file_get_contents('alice30.csv'));
 
-$wordBank[0] = "zero";
-$wordBank[1] = "first";
-$wordBank[2] = "second";
-$wordBank[3] = "third";
-$wordBank[4] = "fourth";
-$wordBank[5] = "fifth";
-$wordBank[6] = "sixth";
-$wordBank[7] = "seventh";
-$wordBank[8] = "eieth";
-$wordBank[9] = "nineth";
-$wordBank[10] = "tenth";
-$wordBank[11] = "eleventh";
-$wordBank[12] = "twelevth";
-$wordBank[13] = "thierteenth";
-$wordBank[14] = "fourteenth";
+// Establish bank of special characters
+$specCharBank = [];
+$specCharBank[1] = '!';
+$specCharBank[2] = '@';
+$specCharBank[3] = '#';
+$specCharBank[4] = '$';
+$specCharBank[5] = '%';
+$specCharBank[6] = '^';
+$specCharBank[7] = '&';
+$specCharBank[8] = '*';
 
 $outputString = "";
 $outputKeys = [];
@@ -29,11 +25,12 @@ else {
 	$passLen = 4;
 }
 
-// If an input not between zero and ten was given, default to 4
-if(($passLen >10) || ($passLen <1)) {
+// If an input not between two and ten (inclusive) was given, default to 4
+if(($passLen >10) || ($passLen <2)) {
 	$passLen = 4;
 }
 
+// Check to see if the capital word checkbox was selected
 if( array_key_exists("reqCap", $_GET) ) {
 	if($_GET["reqCap"] == "on"){
 		$reqCap = 1;
@@ -47,22 +44,60 @@ else{
 	$reqCap = 0;
 }
 
+// Check to see if the special character checkbox was selected
+if( array_key_exists("reqSpec", $_GET) ) {
+	if($_GET["reqSpec"] == "on"){
+		$reqSpec = 1;
+	}
+	else
+	{
+		$reqSpec = 0;
+	}
+}
+else{
+	$reqSpec = 0;
+}
+
+// Check to see if the number checkbox was selected
+if( array_key_exists("reqNum", $_GET) ) {
+	if($_GET["reqNum"] == "on"){
+		$reqNum = 1;
+	}
+	else
+	{
+		$reqNum = 0;
+	}
+}
+else{
+	$reqNum = 0;
+}
 
 // Store passLen number of keys in outputKeys
 $outputKeys = array_rand($wordBank, $passLen);
 
-// If capital letters are needed, first pick which word will be changed
-$wordToUpper = rand(0, $passLen);
+// Randomly decide where any capitals, numbers, or special characters will go
+$wordToAlter = rand(0, ($passLen-1));
+
 
 // Loop to build output string
 for($i = 0; $i < $passLen; $i++){
 	// If word should be upper case alter it, otherwise enter as is
-	if( ($i == $wordToUpper) && ($reqCap == 1) ){ 
+	if( ($i == $wordToAlter) && ($reqCap == 1) ){ 
 		$outputString .= strtoupper($wordBank[$outputKeys[$i]]);
 	} 
 	else {
-		$outputString .= $wordBank[$outputKeys[$i]];
+		$outputString .= strtolower($wordBank[$outputKeys[$i]]);
 	}
+	
+	// If a number should be added, put in a random one
+	if( ($i == $wordToAlter) && ($reqNum == 1) ){ 
+		$outputString .= rand(0,9);
+	} 
+	
+	// If a special character should be added, put in a random one
+	if( ($i == $wordToAlter) && ($reqSpec == 1) ){ 
+		$outputString .= $specCharBank[array_rand($specCharBank, 1)];
+	} 
 	
 	// If not the last word, append a '-' to it
 	if($i != ($passLen-1)){
