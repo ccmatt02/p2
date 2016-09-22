@@ -4,7 +4,9 @@
 <http://p2.masanders.me>
 
 ## Description
-An XKCD style password generator.
+An XKCD style password generator with options for capitalization, numbers, and special characters. 
+The word bank is constructed from Lewis Caroll's "Alice's Adventures In Wonderland" and stored in a
+.csv file which is imported into an array.
 
 ## Demo
 	TODO
@@ -14,6 +16,7 @@ An XKCD style password generator.
 
 ## Outside code
 * PureCSS: <http://purecss.io/>
+* Convertio .txt to .csv converter: <https://convertio.co/txt-csv/>
 * The word bank was derived from Lewis Caroll's "Alice's Adventures In Wonderland"
   which was obtained in .txt format from the University of Michigan's website:
 	
