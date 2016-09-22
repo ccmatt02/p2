@@ -2,7 +2,7 @@
 <html>
 <head>
 
-	<title>Matthew Sanders - Project Two</title>
+	<title>XKCD Style Password Generator - Matthew Sanders</title>
 	<meta charset='utf-8'>
 
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
