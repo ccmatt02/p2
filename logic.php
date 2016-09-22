@@ -1,7 +1,7 @@
 <?php
 
 // Load .csv file into wordbank
-$wordBank = str_getcsv(file_get_contents('alice30.csv'));
+$wordBank = str_getcsv(file_get_contents('alice.csv'));
 
 // Establish bank of special characters
 $specCharBank = [];
