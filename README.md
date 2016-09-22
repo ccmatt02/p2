@@ -9,7 +9,7 @@ The word bank is constructed from Lewis Caroll's "Alice's Adventures In Wonderla
 .csv file which is imported into an array.
 
 ## Demo
-	<http://screencast.com/t/RxKPt9GRAQ>
+	http://screencast.com/t/RxKPt9GRAQ
 
 ## Details for teaching team
 	None for this project
